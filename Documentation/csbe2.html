@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet",href="css/style.css">
+</head>
+<body>
+    <main>
+            <section>
+                <h1>Documentation Page</h1>
+                <p>The official docs for <span class="text-red" id=""doc page"></span> Documentation Page. Talk about dogfeeding 🤗</p>
+
+            </section>
+            <section>
+                <h2>Getting Started</h2>
+                <p>
+                    There is a high chance that your documentation already works properly! Try it out by searching your
+                    repos in our homepage:
+
+                </p>
+                <p>
+                    <a href = "https://documentation.page/" class="text-red">https://documentation.page/</a>
+                </p>
+                <p>
+                    You can organize your documentation broadly in three different ways:
+                    <ul>
+                        <li>Single<span class="text-bold"></span>readme.md file. Ideal for smaller projects, you can put all the docs in this file and call it a day. <span class="text-red">See example.</span></li>
+
+                        <li>Folder <span class="text-bold">documentation</span> with multiple markdown files. These will all be concatenated in alphabetic order to generate the full documentation. (TODO: examples).</li>
+
+                        <li>Custom<span class="text-bold">documentation.page json</span> configuration if you want a different personalized docs organization. See example config with output website.</li>
+                    </ul>
+                </p>
+
+            </section>
+            <section>
+                <h2>Convention</h2>
+                <p>
+                    This is the most powerful bit, since we will crawl your repository looking for some specific helpful bits and use that to generate the website. When possible, we recommend following the convention first, and otherwise adding <span class="text-red"some custom configuration></span>         </p>   
+                          <p>
+                    The data that is parsed automatically is similar to the configuration available:
+                </p>
+                <table>
+                    <thread>
+                        <tr>
+                            <th>key</th>
+                            <th>description</th>
+                            <th>source</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        <tr>
+                            <td>name</td>
+                            <td>very short identifier for the project</td>
+                            <td>Github API's repo <span class= "text-bg"name></span>, cleaned up</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>title</td>
+                            <td>longer identifier for the project</td>
+                            <td>Same as name</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                        <td>description</td>
+                        <td>a paragraph summarizing the project	</td>
+                        <td>Github API's repo description </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>logo</td>
+                            <td>absolute path pointing to your project logo	</td>
+                            <td>Any file found called favicon.png or logo.png
+                            </td>
+
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>menu</td>
+                            <td>the top-right menu links for custom domains	</td>
+                            <td>Configuration required for custom domains
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>pages</td>
+                            <td>list the files/folders to crawl	</td>
+                            <td>["readme.md", "documentation", "examples", ...]
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h3>Configuration</h3>
+                <p>These are the documentation options right now:
+
+                </p>
+                <table>
+                    <thread>
+                        <tr>
+                            <th>key</th>
+                            <th>description</th>
+                            <th>example</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        <tr>
+                            <td>name</td>
+                            <td>very short identifier for the project</td>
+                            <td>Statux</td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>title</td>
+                            <td>longer identifier for the project</td>
+                            <td>Statux • The easy React state management library
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                        <td>description</td>
+                        <td>a paragraph summarizing the project	</td>
+                        <td>A straightforward way of dealing with your ...
+                        </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>logo</td>
+                            <td>absolute path pointing to your project logo	</td>
+                            <td>Any file found called favicon.png or logo.png
+                            </td>
+
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>menu</td>
+                            <td>the top-right menu links for custom domains	</td>
+                            <td>{ "Donate": "...", "Github": "...", ... }
+
+
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>pages</td>
+                            <td>list the files/folders to crawl	</td>
+                            <td>["readme.md", "documentation", "examples", ...]
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <p>They are the keys of a JSON file, which can be either of these:
+
+                </p>
+                <ul>
+                    <li>documentation.page.json: a file on the root of the project</li>
+                    <li>documentation/page.json: a file called page.json inside a folder called documentation</li>
+                    <li>[not yet] the key documentation inside your package.json</li>
+                </ul>
+            </section>
+            <section>
+                <h3>name</h3>
+                <p>
+                    A very short name to identify the project. It must be the name of the project and nothing else, and so it excludes the tag line, icon, etc. It will be visible in:
+                </p>
+                <ul>
+                    <li>Tab title
+                    </li>
+                    <li>Navbar title (Pro)
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>title</h3>
+                <p>Longer identifier for the project, possibly stating the tagline. It will be visible in:
+
+                </p>
+                <ul>
+                    <li>Google search main title
+                    </li>
+                    <li>Share card preview main title
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>description</h3>
+                <p>A paragraph summarizing the project funcionality and competitive advantages. This appears in:
+
+                </p>
+                <ul>
+                    <li>Google search description</li>
+                    <li>Share card preview description</li>
+                </ul>
+
+            </section>
+            <section>
+                <h3>logo</h3>
+                <p>An absolute path to the image associated with the logo of your project. It can only be in .png right now. It will show on:
+               </p>
+                <ul>
+                    <li>Favicon</li>
+                    <li>Navbar before the project name
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h3>menu</h3>
+                <p>the top-right menu links for custom domains. It is an object with the labels (text) as the keys, and the links as the URLs. Example:</p>
+                <div class = "code-block">
+                    <pre>
+                    {
+                        "menu": {
+                          "Issues": "https://github.com/franciscop/react-test/issues",
+                          "Contribute": "https://github.com/franciscop/react-test/blob/master/Contributing.md",
+                          "Donate": "https://www.paypal.me/franciscopresencia/19",
+                          "Github": "https://github.com/franciscop/react-test"
+                        }
+                      }
+                    </pre>
+                    </div>
+            </section>
+            <section>
+                <h3>pages</h3>
+                <p>Where the data should be searched. Defaults to heroreadme.md. It IS case insensitive. Example:</p>
+                <div class = "code-block">
+                    {
+                        "pages": ["readme.md", "src/methods", "src/jest-matchers", "src/examples"]
+                      }
+                </div>
+            </section>
+            <section>
+                <h3>Guides</h3>
+                <h2>Moving OUT of Documentation Page
+                </h2>
+                <p>I created Documentation Page to be a place where developers can easily semi-automate their docs websites, not to lock them in. So if at some point, for some reason you decide to move out into e.g. Github Pages, please feel free to do so! There are some <span class ="text-red"disadvantages></span> but these might not affect you.</p>
+                <p>The easiest and probably best way of making your Github Pages is having a single markdown file with all of the docs. Then you can either have a script that converts that into a full HTML page locally, or using a Jekyll template that converts it into an HTML page on Github pages</p>
+                <p>[TODO]</p>
+            </section>
+            <section>
+                <h2>How it works
+                </h2>
+                <h3>Reading the repo
+                </h3>
+                <p>The repository specified must be public so that it can be read by Documentation Page (contact us if you need a private one). Once you specify your username+repo, Documentation Page gets to work. It'll parse different files to find the best way to build the documentation</p>
+                <p>You can organize your documentation broadly in three different ways:
+
+                </p>
+                <ul>
+                    <li>Single<span class="text-bg"readme.md></span> file. Ideal for smaller projects, you can put all the docs in this file and call it a day.<span class="text-red" example.></span></li>
+                    <li>Folder <span class ="text-bg"documentation></span> with multiple markdown files. These will all be concatenated in alphabetic order to generate the full documentation. For this, it is recommended to add indexes like 1. Welcome, 2. Getting Started to your files. (TODO: examples).</li>
+                    <li>Custom <span class="text-bg"documentation.page.json></span> configuration if you want a different personalized docs organization. See <span class="text-red"example config></span>  with <span class="text-red"output website.></span></li>
+                </ul>
+            </section>
+            <section>
+                <p>
+                    The way Documentation Page works is, we merge all of those files into a single large file.
+                   </p>
+            </section>
+            <section>
+                <h2>Autogenerated Navigation
+                </h2>
+                <p>The navigation is autogenerated from the merged file containing all of your documentation. It's parsed, put together, and then sorted from h1 to h4. If there are multiple h1s, we drop all the headers a level except the first h1.
+
+                </p>
+            </section>
+            <section>
+                <h2>Full-text Search
+                </h2>
+                <h1>Compare with
+                </h1>
+                <h2>Github Pages
+                </h2>
+            </section>
+            
+
+    </main>
+    
+</body>
+</html>
